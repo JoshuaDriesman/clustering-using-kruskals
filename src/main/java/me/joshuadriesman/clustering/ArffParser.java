@@ -42,12 +42,12 @@ public class ArffParser extends ParserAbstract {
             String[] splitLine = line.split(",");
 
             return new Segment(Integer.valueOf(splitLine[0]), Integer.valueOf(splitLine[1]),
-                    Integer.valueOf(splitLine[3]), Integer.valueOf(splitLine[4]), Integer.valueOf(splitLine[5]),
-                    Integer.valueOf(splitLine[6]), Integer.valueOf(splitLine[7]), Integer.valueOf(splitLine[8]),
-                    Integer.valueOf(splitLine[9]), Integer.valueOf(splitLine[10]), Integer.valueOf(splitLine[11]),
-                    Integer.valueOf(splitLine[12]), Integer.valueOf(splitLine[13]), Integer.valueOf(splitLine[14]),
-                    Integer.valueOf(splitLine[15]), Integer.valueOf(splitLine[16]), Integer.valueOf(splitLine[17]),
-                    Integer.valueOf(splitLine[18]), Integer.valueOf(splitLine[19]), splitLine[20]);
+                    Integer.valueOf(splitLine[2]), Double.valueOf(splitLine[3]), Double.valueOf(splitLine[4]),
+                    Double.valueOf(splitLine[5]), Double.valueOf(splitLine[6]), Double.valueOf(splitLine[7]),
+                    Double.valueOf(splitLine[8]), Double.valueOf(splitLine[9]), Double.valueOf(splitLine[10]),
+                    Double.valueOf(splitLine[11]), Double.valueOf(splitLine[12]), Double.valueOf(splitLine[13]),
+                    Double.valueOf(splitLine[14]), Double.valueOf(splitLine[15]), Double.valueOf(splitLine[16]),
+                    Double.valueOf(splitLine[17]), Double.valueOf(splitLine[18]), splitLine[19]);
         } else {
             throw new IllegalStateException("End of file reached!");
         }

@@ -13,22 +13,22 @@ public class Segment implements LineData{
     private final int regionCentroidCol;
     private final int regionCentroidRow;
     private final int regionPixelCount;
-    private final int shortLineDensity5;
-    private final int shortLineDensity2;
-    private final int vedgeMean;
-    private final int vedgeSd;
-    private final int hedgeMean;
-    private final int hedgeSd;
-    private final int intensityMean;
-    private final int rawredMean;
-    private final int rawblueMean;
-    private final int rawgreenMean;
-    private final int exredMean;
-    private final int exblueMean;
-    private final int exgreenMean;
-    private final int valueMean;
-    private final int saturatoinMean;
-    private final int hueMean;
+    private final double shortLineDensity5;
+    private final double shortLineDensity2;
+    private final double vedgeMean;
+    private final double vedgeSd;
+    private final double hedgeMean;
+    private final double hedgeSd;
+    private final double intensityMean;
+    private final double rawredMean;
+    private final double rawblueMean;
+    private final double rawgreenMean;
+    private final double exredMean;
+    private final double exblueMean;
+    private final double exgreenMean;
+    private final double valueMean;
+    private final double saturatoinMean;
+    private final double hueMean;
 
     private final String label;
 
@@ -55,10 +55,11 @@ public class Segment implements LineData{
      * @param hueMean The segment's hueMean.
      * @param label The segment's label.
      */
-    public Segment(int regionCentroidCol, int regionCentroidRow, int regionPixelCount, int shortLineDensity5,
-                   int shortLineDensity2, int vedgeMean, int vedgeSd, int hedgeMean, int hedgeSd, int intensityMean,
-                   int rawredMean, int rawblueMean, int rawgreenMean, int exredMean, int exblueMean, int exgreenMean,
-                   int valueMean, int saturatoinMean, int hueMean, String label) {
+    public Segment(int regionCentroidCol, int regionCentroidRow, int regionPixelCount, double shortLineDensity5,
+                   double shortLineDensity2, double vedgeMean, double vedgeSd, double hedgeMean, double hedgeSd,
+                   double intensityMean, double rawredMean, double rawblueMean, double rawgreenMean, double exredMean,
+                   double exblueMean, double exgreenMean, double valueMean, double saturatoinMean, double hueMean,
+                   String label) {
 
         this.regionCentroidCol = regionCentroidCol;
         this.regionCentroidRow = regionCentroidRow;
@@ -112,7 +113,7 @@ public class Segment implements LineData{
      * Getter for shortLineDensity5
      * @return shortLineDensity5
      */
-    public int getShortLineDensity5() {
+    public double getShortLineDensity5() {
         return shortLineDensity5;
     }
 
@@ -120,7 +121,7 @@ public class Segment implements LineData{
      * Getter for shortLineDensity2
      * @return shortLineDensity2
      */
-    public int getShortLineDensity2() {
+    public double getShortLineDensity2() {
         return shortLineDensity2;
     }
 
@@ -128,7 +129,7 @@ public class Segment implements LineData{
      * Getter for vedgeMean
      * @return vedgeMean
      */
-    public int getVedgeMean() {
+    public double getVedgeMean() {
         return vedgeMean;
     }
 
@@ -136,7 +137,7 @@ public class Segment implements LineData{
      * Getter for vedgeSd
      * @return vedgeSd
      */
-    public int getVedgeSd() {
+    public double getVedgeSd() {
         return vedgeSd;
     }
 
@@ -144,7 +145,7 @@ public class Segment implements LineData{
      * Getter for hedgeMean
      * @return hedgeMean
      */
-    public int getHedgeMean() {
+    public double getHedgeMean() {
         return hedgeMean;
     }
 
@@ -152,7 +153,7 @@ public class Segment implements LineData{
      * Getter for hedgeSd
      * @return hedgeSd
      */
-    public int getHedgeSd() {
+    public double getHedgeSd() {
         return hedgeSd;
     }
 
@@ -160,7 +161,7 @@ public class Segment implements LineData{
      * Getter for intensityMean
      * @return intensityMean
      */
-    public int getIntensityMean() {
+    public double getIntensityMean() {
         return intensityMean;
     }
 
@@ -168,7 +169,7 @@ public class Segment implements LineData{
      * Getter for rawredMean
      * @return rawredMean
      */
-    public int getRawredMean() {
+    public double getRawredMean() {
         return rawredMean;
     }
 
@@ -176,7 +177,7 @@ public class Segment implements LineData{
      * Getter for rawblueMean
      * @return rawblueMean
      */
-    public int getRawblueMean() {
+    public double getRawblueMean() {
         return rawblueMean;
     }
 
@@ -184,7 +185,7 @@ public class Segment implements LineData{
      * Getter for rawgreenMean
      * @return rawgreenMean
      */
-    public int getRawgreenMean() {
+    public double getRawgreenMean() {
         return rawgreenMean;
     }
 
@@ -192,7 +193,7 @@ public class Segment implements LineData{
      * Getter for exredMean
      * @return exredMean
      */
-    public int getExredMean() {
+    public double getExredMean() {
         return exredMean;
     }
 
@@ -200,7 +201,7 @@ public class Segment implements LineData{
      * Getter for exblueMean
      * @return exblueMean
      */
-    public int getExblueMean() {
+    public double getExblueMean() {
         return exblueMean;
     }
 
@@ -208,7 +209,7 @@ public class Segment implements LineData{
      * Getter for exgreenMean
      * @return exgreenMean
      */
-    public int getExgreenMean() {
+    public double getExgreenMean() {
         return exgreenMean;
     }
 
@@ -216,7 +217,7 @@ public class Segment implements LineData{
      * Getter for valueMean
      * @return valueMean
      */
-    public int getValueMean() {
+    public double getValueMean() {
         return valueMean;
     }
 
@@ -224,7 +225,7 @@ public class Segment implements LineData{
      * Getter for saturatoinMean
      * @return saturatoinMean
      */
-    public int getSaturatoinMean() {
+    public double getSaturatoinMean() {
         return saturatoinMean;
     }
 
@@ -232,7 +233,7 @@ public class Segment implements LineData{
      * Getter for hueMean
      * @return hueMean
      */
-    public int getHueMean() {
+    public double getHueMean() {
         return hueMean;
     }
 
@@ -276,25 +277,43 @@ public class Segment implements LineData{
 
     @Override
     public int hashCode() {
-        int result = regionCentroidCol;
+        int result;
+        long temp;
+        result = regionCentroidCol;
         result = 31 * result + regionCentroidRow;
         result = 31 * result + regionPixelCount;
-        result = 31 * result + shortLineDensity5;
-        result = 31 * result + shortLineDensity2;
-        result = 31 * result + vedgeMean;
-        result = 31 * result + vedgeSd;
-        result = 31 * result + hedgeMean;
-        result = 31 * result + hedgeSd;
-        result = 31 * result + intensityMean;
-        result = 31 * result + rawredMean;
-        result = 31 * result + rawblueMean;
-        result = 31 * result + rawgreenMean;
-        result = 31 * result + exredMean;
-        result = 31 * result + exblueMean;
-        result = 31 * result + exgreenMean;
-        result = 31 * result + valueMean;
-        result = 31 * result + saturatoinMean;
-        result = 31 * result + hueMean;
+        temp = Double.doubleToLongBits(shortLineDensity5);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(shortLineDensity2);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(vedgeMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(vedgeSd);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(hedgeMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(hedgeSd);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(intensityMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(rawredMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(rawblueMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(rawgreenMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(exredMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(exblueMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(exgreenMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(valueMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(saturatoinMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(hueMean);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + label.hashCode();
         return result;
     }
