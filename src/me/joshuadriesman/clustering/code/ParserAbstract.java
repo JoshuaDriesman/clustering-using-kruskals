@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Joshua Driesman on 10/20/2015.
@@ -23,7 +23,7 @@ public abstract class ParserAbstract implements Parser{
     }
 
     @Override
-    public abstract ArrayList<LineData> parseWhole();
+    public abstract List<LineData> parseWhole();
 
     @Override
     public abstract LineData parseLine();

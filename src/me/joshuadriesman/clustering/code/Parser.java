@@ -1,6 +1,6 @@
 package me.joshuadriesman.clustering.code;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Joshua Driesman on 10/20/2015.
@@ -14,7 +14,7 @@ public interface Parser {
      * Parses entire file at once.
      * @return ArrayList of all the data lines in the data file.
      */
-    public ArrayList<LineData> parseWhole();
+    public List<LineData> parseWhole();
 
     /**
      * Parses a single line in the file. Called multiple times until end of file.
