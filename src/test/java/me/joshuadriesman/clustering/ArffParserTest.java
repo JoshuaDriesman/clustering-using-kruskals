@@ -44,4 +44,13 @@ public class ArffParserTest {
         assertEquals(expectedLine1, actualLine1);
         assertEquals(expectedLine2, actualLine2);
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void testReadLinesPastEndOfFile() {
+        Parser p = new ArffParser(TEST_FILE_PATH);
+
+        for (int i = 0; i < 60; i++) {
+            p.parseLine();
+        }
+    }
 }
