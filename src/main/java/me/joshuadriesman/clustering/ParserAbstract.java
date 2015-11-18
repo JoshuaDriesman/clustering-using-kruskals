@@ -18,7 +18,7 @@ public abstract class ParserAbstract implements Parser{
         try {
             reader = Files.newBufferedReader(Paths.get(fileToParse));
         } catch (IOException e) {
-            throw new IllegalArgumentException("File does not exist or is inaccessible.");
+            throw new IllegalArgumentException("File does not exist or is inaccessible: " + e.getMessage());
         }
     }
 
