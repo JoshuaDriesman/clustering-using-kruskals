@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering.tests;
+package me.joshuadriesman.clustering;
 
 import org.junit.Test;
 

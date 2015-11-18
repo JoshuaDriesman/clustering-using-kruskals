@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering.code;
+package me.joshuadriesman.clustering;
 
 import java.io.IOException;
 import java.util.ArrayList;

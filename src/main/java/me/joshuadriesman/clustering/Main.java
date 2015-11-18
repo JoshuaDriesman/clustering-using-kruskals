@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering.code;
+package me.joshuadriesman.clustering;
 
 /**
  * Created by Joshua Driesman on 10/20/2015.
