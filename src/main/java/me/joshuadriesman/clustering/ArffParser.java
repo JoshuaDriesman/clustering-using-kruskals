@@ -22,6 +22,10 @@ public class ArffParser extends ParserAbstract {
     public List<LineData> parseWhole() {
         List<LineData> result = new ArrayList<>();
 
+        if (endOfFile()) {
+            throw new IllegalStateException("End of file already reached!");
+        }
+
         while (!endOfFile()) {
             result.add(parseLine());
         }

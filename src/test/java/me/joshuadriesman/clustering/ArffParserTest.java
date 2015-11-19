@@ -53,4 +53,15 @@ public class ArffParserTest {
             p.parseLine();
         }
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void readWholeAfterEndOfFile() {
+        Parser p = new ArffParser(TEST_FILE_PATH);
+
+        for (int i = 0; i < 59; i++) {
+            p.parseLine();
+        }
+
+        p.parseWhole();
+    }
 }
