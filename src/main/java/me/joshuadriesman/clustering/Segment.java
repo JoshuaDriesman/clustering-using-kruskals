@@ -85,6 +85,46 @@ public class Segment implements LineData{
         this.label = label;
     }
 
+    @Override
+    public int distance(LineData o) {
+        if (!(o instanceof Segment)) {
+            throw new IllegalArgumentException("LineData type must match in order to calculate distance.");
+        }
+
+        Segment other = (Segment) o;
+
+        int regionCentroidColDist = this.regionCentroidCol - other.getRegionCentroidCol();
+        int regionCentroidRowDist = this.regionCentroidRow - other.getRegionCentroidRow();
+        int regionPixelCountDist = this.regionPixelCount - other.getRegionPixelCount();
+        double shortLineDensity5Dist = this.shortLineDensity5 - other.getShortLineDensity5();
+        double shortLineDensity2Dist = this.shortLineDensity2 - other.getShortLineDensity2();
+        double vedgeMeanDist = this.vedgeMean - other.getVedgeMean();
+        double vedgeSdDist = this.vedgeSd - other.getVedgeSd();
+        double hedgeMeanDist = this.hedgeMean - other.getHedgeMean();
+        double headgeSdDist = this.hedgeSd - other.getHedgeSd();
+        double intensityMeanDist = this.intensityMean - other.getIntensityMean();
+        double rawredMeanDist = this.rawredMean - other.getRawredMean();
+        double rawblueMeanDist = this.rawblueMean - other.getRawblueMean();
+        double rawgreenMeanDist = this.rawgreenMean - other.getRawgreenMean();
+        double exredMeanDist = this.exredMean - other.getExredMean();
+        double exblueMeanDist = this.exblueMean - other.getExblueMean();
+        double exgreenMeanDist = this.exgreenMean - other.getExgreenMean();
+        double valueMeanDist = this.valueMean - other.getValueMean();
+        double saturationMeanDist = this.saturatoinMean - other.getSaturatoinMean();
+        double hueMeanDist = this.hueMean - other.getHueMean();
+
+        double distance = Math.sqrt(Math.pow(regionCentroidColDist, 2) + Math.pow(regionCentroidRowDist, 2) +
+                Math.pow(regionPixelCountDist, 2) + Math.pow(shortLineDensity5Dist, 2) +
+                Math.pow(shortLineDensity2Dist, 2) + Math.pow(vedgeMeanDist, 2) + Math.pow(vedgeSdDist, 2) +
+                Math.pow(hedgeMeanDist, 2) + Math.pow(headgeSdDist, 2) + Math.pow(intensityMeanDist, 2) +
+                Math.pow(rawredMeanDist, 2) + Math.pow(rawblueMeanDist, 2) + Math.pow(rawgreenMeanDist, 2) +
+                Math.pow(exredMeanDist, 2) + Math.pow(exblueMeanDist, 2) + Math.pow(exgreenMeanDist, 2) +
+                Math.pow(valueMeanDist, 2) + Math.pow(saturationMeanDist, 2) + Math.pow(hueMeanDist, 2));
+
+        Long roundedDist = Math.round(distance);
+        return roundedDist.intValue();
+    }
+
     /**
      * Getter for regionCentroidCol
      * @return regionCentroidCol
