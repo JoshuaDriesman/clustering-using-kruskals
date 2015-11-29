@@ -9,5 +9,6 @@ import org.junit.Test;
  *
  * Tests for the ImageSegment class.
  */
-public class SegmentTest {
+public class ImageSegmentTest {
+
 }
