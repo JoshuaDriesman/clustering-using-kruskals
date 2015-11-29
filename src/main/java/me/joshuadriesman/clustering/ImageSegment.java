@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * Represents a single piece of image segment data (aka a single line from the .arff file)
  */
-public class Segment implements LineData{
+public class ImageSegment implements LineData{
     private final int regionCentroidCol;
     private final int regionCentroidRow;
     private final int regionPixelCount;
@@ -55,11 +55,11 @@ public class Segment implements LineData{
      * @param hueMean The segment's hueMean.
      * @param label The segment's label.
      */
-    public Segment(int regionCentroidCol, int regionCentroidRow, int regionPixelCount, double shortLineDensity5,
-                   double shortLineDensity2, double vedgeMean, double vedgeSd, double hedgeMean, double hedgeSd,
-                   double intensityMean, double rawredMean, double rawblueMean, double rawgreenMean, double exredMean,
-                   double exblueMean, double exgreenMean, double valueMean, double saturatoinMean, double hueMean,
-                   String label) {
+    public ImageSegment(int regionCentroidCol, int regionCentroidRow, int regionPixelCount, double shortLineDensity5,
+                        double shortLineDensity2, double vedgeMean, double vedgeSd, double hedgeMean, double hedgeSd,
+                        double intensityMean, double rawredMean, double rawblueMean, double rawgreenMean, double exredMean,
+                        double exblueMean, double exgreenMean, double valueMean, double saturatoinMean, double hueMean,
+                        String label) {
 
         this.regionCentroidCol = regionCentroidCol;
         this.regionCentroidRow = regionCentroidRow;
@@ -87,11 +87,11 @@ public class Segment implements LineData{
 
     @Override
     public int distance(LineData o) {
-        if (!(o instanceof Segment)) {
+        if (!(o instanceof ImageSegment)) {
             throw new IllegalArgumentException("LineData type must match in order to calculate distance.");
         }
 
-        Segment other = (Segment) o;
+        ImageSegment other = (ImageSegment) o;
 
         int regionCentroidColDist = this.regionCentroidCol - other.getRegionCentroidCol();
         int regionCentroidRowDist = this.regionCentroidRow - other.getRegionCentroidRow();
@@ -290,7 +290,7 @@ public class Segment implements LineData{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Segment segment = (Segment) o;
+        ImageSegment segment = (ImageSegment) o;
 
         if (regionCentroidCol != segment.regionCentroidCol) return false;
         if (regionCentroidRow != segment.regionCentroidRow) return false;
@@ -360,7 +360,7 @@ public class Segment implements LineData{
 
     @Override
     public String toString() {
-        return "Segment{" +
+        return "ImageSegment{" +
                 "regionCentroidCol=" + regionCentroidCol +
                 ", regionCentroidRow=" + regionCentroidRow +
                 ", regionPixelCount=" + regionPixelCount +

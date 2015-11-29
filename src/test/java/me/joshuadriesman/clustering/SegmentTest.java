@@ -7,7 +7,7 @@ import org.junit.Test;
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
  *
- * Tests for the Segment class.
+ * Tests for the ImageSegment class.
  */
 public class SegmentTest {
 }

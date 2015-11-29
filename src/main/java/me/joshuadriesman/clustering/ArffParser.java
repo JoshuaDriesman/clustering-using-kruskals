@@ -11,7 +11,7 @@ import java.util.List;
  *
  * Parser for .arrf files.
  */
-public class ArffParser extends ParserAbstract {
+final public class ArffParser extends ParserAbstract {
 
     public ArffParser(String fileLocation) {
         super(fileLocation);
@@ -45,7 +45,7 @@ public class ArffParser extends ParserAbstract {
 
             String[] splitLine = line.split(",");
 
-            return new Segment(Integer.valueOf(splitLine[0]), Integer.valueOf(splitLine[1]),
+            return new ImageSegment(Integer.valueOf(splitLine[0]), Integer.valueOf(splitLine[1]),
                     Integer.valueOf(splitLine[2]), Double.valueOf(splitLine[3]), Double.valueOf(splitLine[4]),
                     Double.valueOf(splitLine[5]), Double.valueOf(splitLine[6]), Double.valueOf(splitLine[7]),
                     Double.valueOf(splitLine[8]), Double.valueOf(splitLine[9]), Double.valueOf(splitLine[10]),

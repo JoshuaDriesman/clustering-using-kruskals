@@ -1,6 +1,5 @@
 package me.joshuadriesman.clustering;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -22,7 +21,7 @@ public class ArffParserTest {
     public void testReadLine() {
         Parser p = new ArffParser(TEST_FILE_PATH);
 
-        LineData expected = new Segment(218, 178, 9, 0.111111, 0, 0.833333, 0.547722, 1.11111, 0.544331, 59.6296,
+        LineData expected = new ImageSegment(218, 178, 9, 0.111111, 0, 0.833333, 0.547722, 1.11111, 0.544331, 59.6296,
                 52.4444, 75.2222, 51.2222, -21.5556, 46.7778, -25.2222, 75.2222, 0.318996, -2.04055, "path");
         LineData actual = p.parseLine();
 
@@ -33,9 +32,9 @@ public class ArffParserTest {
     public void testRead2Lines() {
         Parser p = new ArffParser(TEST_FILE_PATH);
 
-        LineData expectedLine1 = new Segment(218, 178, 9, 0.111111, 0, 0.833333, 0.547722, 1.11111, 0.544331, 59.6296,
+        LineData expectedLine1 = new ImageSegment(218, 178, 9, 0.111111, 0, 0.833333, 0.547722, 1.11111, 0.544331, 59.6296,
                 52.4444, 75.2222, 51.2222, -21.5556, 46.7778, -25.2222, 75.2222, 0.318996, -2.04055, "path");
-        LineData expectedLine2 = new Segment(113,130,9,0,0,0.277778,0.250924,0.333333,0.365148,0.888889,0,2.55556,
+        LineData expectedLine2 = new ImageSegment(113,130,9,0,0,0.277778,0.250924,0.333333,0.365148,0.888889,0,2.55556,
                 0.111111,-2.66667,5,-2.33333,2.55556,1,-2.12325,"foliage");
 
         LineData actualLine1 = p.parseLine();
