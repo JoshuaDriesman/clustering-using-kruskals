@@ -7,6 +7,8 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Joshua Driesman on 11/18/2015.
+ *
+ * Copyright 2015 Joshua Driesman, All rights reserved
  */
 public class ArffParserTest {
     final String TEST_FILE_PATH = "src/test/resources/segment-test.arff";
