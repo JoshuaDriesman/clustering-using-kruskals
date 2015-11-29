@@ -86,7 +86,7 @@ public class ImageSegment implements LineData{
     }
 
     @Override
-    public int distance(LineData o) {
+    public double distance(LineData o) {
         if (!(o instanceof ImageSegment)) {
             throw new IllegalArgumentException("LineData type must match in order to calculate distance.");
         }
@@ -121,8 +121,7 @@ public class ImageSegment implements LineData{
                 Math.pow(exredMeanDist, 2) + Math.pow(exblueMeanDist, 2) + Math.pow(exgreenMeanDist, 2) +
                 Math.pow(valueMeanDist, 2) + Math.pow(saturationMeanDist, 2) + Math.pow(hueMeanDist, 2));
 
-        Long roundedDist = Math.round(distance);
-        return roundedDist.intValue();
+        return distance;
     }
 
     /**

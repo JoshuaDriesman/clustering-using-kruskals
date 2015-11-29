@@ -13,5 +13,5 @@ public interface LineData {
      * @param o the data for the node to calculate the distance to.
      * @return the distance between the two nodes
      */
-    public int distance(LineData o);
+    public double distance(LineData o);
 }
