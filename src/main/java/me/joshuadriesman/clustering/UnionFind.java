@@ -41,7 +41,34 @@ public class UnionFind implements UnionFindInterface{
 
     @Override
     public void union(Edge e) {
+        LineData repForA = find(e.getA());
+        LineData repForB = find(e.getB());
 
+        if (repForA != repForB) {
+            if (clusters.get(repForA).size() >= clusters.get(repForB).size()) {
+                clusters.get(repForA).addAll(clusters.get(repForB));
+
+                LinkedList<LineData> nodesForB = clusters.get(repForB);
+
+                clusters.put(repForB, null);
+
+                //Update reps
+                for (LineData node : nodesForB) {
+                    representatives.put(node, repForA);
+                }
+            } else {
+                clusters.get(repForB).addAll(clusters.get(repForA));
+
+                LinkedList<LineData> nodesForA = clusters.get(repForA);
+
+                clusters.put(repForB, null);
+
+                //Update reps
+                for (LineData node : nodesForA) {
+                    representatives.put(node, repForB);
+                }
+            }
+        }
     }
 
     public List<Edge> getEdges() {
