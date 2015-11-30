@@ -5,11 +5,11 @@ package me.joshuadriesman.clustering;
  */
 public interface UnionFindInterface {
     /**
-     * Find the representative of the set that this ImageSegment is in.
-     * @param i the ImageSegment who's set you want to look up
+     * Find the representative of the set that this LineData is in.
+     * @param i the LineData who's set you want to look up
      * @return the representative of the set
      */
-    ImageSegment find(ImageSegment i);
+    LineData find(LineData i);
 
     /**
      * Union the two sets connected by that edge.
