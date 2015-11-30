@@ -2,8 +2,9 @@ package me.joshuadriesman.clustering;
 
 import org.junit.Test;
 
-import java.util.List;
+import java.util.*;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 public class UnionFindTest {
     @Test
     public void testSortingOfEdges() {
-        List<LineData> imageSegments = new ArffParser("src/main/resources/segment-full.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         List<Edge> edges = uf.getEdges();
@@ -22,6 +23,18 @@ public class UnionFindTest {
         // Make sure list of edges is sorted properly
         for (int i=0; i<edges.size() - 1; i++) {
             assertTrue(edges.get(i).getWeight() <= edges.get(i + 1).getWeight());
+        }
+    }
+
+    @Test
+    public void testInitialRepresentativesList() {
+        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        UnionFind uf = new UnionFind(imageSegments);
+
+        HashMap<LineData, LineData> repPairs = uf.getRepresentatives();
+
+        for (Map.Entry<LineData, LineData> entry : repPairs.entrySet()) {
+            assertEquals(entry.getKey(), (entry.getValue()));
         }
     }
 }

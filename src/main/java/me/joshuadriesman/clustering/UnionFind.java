@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class UnionFind implements UnionFindInterface{
     private List<Edge> edges  = new ArrayList<>();
-    private HashMap<LineData, LineData> representatives;
+    private HashMap<LineData, LineData> representatives = new HashMap<>();
 
     public UnionFind(List<LineData> segments) {
         for (int i = 0; i < segments.size() - 1; i++) {
@@ -22,6 +22,8 @@ public class UnionFind implements UnionFindInterface{
 
                 edges.add(new Edge(nodeA, nodeB));
             }
+
+            representatives.put(nodeA, nodeA);
         }
         Collections.sort(edges);
     }
@@ -38,5 +40,9 @@ public class UnionFind implements UnionFindInterface{
 
     public List<Edge> getEdges() {
         return edges;
+    }
+
+    public HashMap<LineData, LineData> getRepresentatives() {
+        return representatives;
     }
 }
