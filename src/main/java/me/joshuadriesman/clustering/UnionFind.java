@@ -36,7 +36,7 @@ public class UnionFind implements UnionFindInterface{
 
     @Override
     public LineData find(LineData i) {
-        return null;
+        return representatives.get(i);
     }
 
     @Override
