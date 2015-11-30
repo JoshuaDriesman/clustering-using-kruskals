@@ -9,10 +9,10 @@ import java.util.Objects;
  *
  * Represents an edge between two LineData nodes.
  */
-public class Edge {
-    LineData a;
-    LineData b;
-    double weight;
+final public class Edge implements Comparable {
+    private final LineData a;
+    private final LineData b;
+    private final double weight;
 
     /**
      * Creates new edge object.
@@ -55,5 +55,24 @@ public class Edge {
      */
     public double getWeight() {
         return weight;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Objects.requireNonNull(o);
+
+        if (!(o instanceof Edge)) {
+            throw new IllegalArgumentException("Must compare against an object of the Edge type.");
+        }
+
+        Edge other = (Edge) o;
+
+        if (other.getWeight() < this.weight) {
+            return 1;
+        } else if (other.getWeight() > this.weight) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
