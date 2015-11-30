@@ -37,4 +37,21 @@ public class UnionFindTest {
             assertEquals(entry.getKey(), (entry.getValue()));
         }
     }
+
+    @Test
+    public void testInitialClustersList() {
+        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        UnionFind uf = new UnionFind(imageSegments);
+
+        HashMap<LineData, LinkedList<LineData>> clusters = uf.getClusters();
+
+        for (Map.Entry<LineData, LinkedList<LineData>> cluster : clusters.entrySet()) {
+            LineData rep = cluster.getKey();
+            LinkedList<LineData> members = cluster.getValue();
+
+            assertEquals(members.size(), 1);
+
+            assertEquals(rep, members.pop());
+        }
+    }
 }
