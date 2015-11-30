@@ -9,7 +9,7 @@ import java.util.List;
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
  *
- * Parser for .arrf files.
+ * Parser for .arff files.
  */
 final public class ArffParser extends ParserAbstract {
 

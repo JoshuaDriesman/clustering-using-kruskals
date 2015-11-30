@@ -11,7 +11,7 @@ import java.util.List;
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
  */
-public abstract class ParserAbstract implements Parser{
+public abstract class ParserAbstract implements Parser {
     BufferedReader reader = null;
 
     public ParserAbstract(String fileToParse) {
