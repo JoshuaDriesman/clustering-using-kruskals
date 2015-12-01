@@ -13,9 +13,11 @@ import static org.junit.Assert.assertTrue;
  * Copyright 2015 Joshua Driesman, All rights reserved
  */
 public class UnionFindTest {
+    final String TEST_FILE_PATH = "src/test/resources/segment-test.arff";
+
     @Test
     public void testSortingOfEdges() {
-        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         List<Edge> edges = uf.getEdges();
@@ -28,7 +30,7 @@ public class UnionFindTest {
 
     @Test
     public void testInitialRepresentativesList() {
-        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         HashMap<LineData, LineData> repPairs = uf.getRepresentatives();
@@ -40,7 +42,7 @@ public class UnionFindTest {
 
     @Test
     public void testInitialClustersList() {
-        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         HashMap<LineData, LinkedList<LineData>> clusters = uf.getClusters();
@@ -57,7 +59,7 @@ public class UnionFindTest {
 
     @Test
     public void testFindInitialReps() {
-        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         LineData node = imageSegments.get(3);
@@ -66,7 +68,7 @@ public class UnionFindTest {
 
     @Test
     public void testInitialUnion() {
-        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
         Edge e = uf.getEdges().get(0);
