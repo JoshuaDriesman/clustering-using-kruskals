@@ -20,7 +20,7 @@ public class UnionFindTest {
         List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
-        List<Edge> edges = uf.getEdges();
+        List<Edge> edges = new ArrayList<>(uf.getEdges());
 
         // Make sure list of edges is sorted properly
         for (int i=0; i<edges.size() - 1; i++) {
