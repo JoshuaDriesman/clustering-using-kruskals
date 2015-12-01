@@ -1,5 +1,6 @@
 package me.joshuadriesman.clustering;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +22,7 @@ public class ResultWriterTest {
 
     @Before
     public void setUp() throws Exception {
-        tempFileLocation = Files.createTempFile(Paths.get(System.getProperty("java.io.tmpdir")),
+        tempFileLocation = Files.createTempFile(Paths.get("src/test/resources"),
                 "resultWriter", "Test");
     }
 
@@ -34,5 +35,10 @@ public class ResultWriterTest {
 
         BufferedReader reader = Files.newBufferedReader(tempFileLocation);
         assertEquals("Test", reader.readLine());
+    }
+
+    @After
+    public void breakDown() throws Exception {
+        Files.delete(tempFileLocation);
     }
 }
