@@ -1,7 +1,6 @@
 package me.joshuadriesman.clustering;
 
 import java.io.*;
-import java.nio.channels.IllegalSelectorException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -28,7 +27,7 @@ public class ResultWriter implements IResultWriter, Closeable {
     @Override
     public void writeLine(String line) throws IOException {
         if (open) {
-            writer.write(line);
+            writer.write(line + "\n");
         } else {
             throw new IllegalStateException("ResultWriter is not open");
         }
