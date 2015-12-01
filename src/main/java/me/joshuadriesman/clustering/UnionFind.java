@@ -9,8 +9,8 @@ import java.util.*;
  */
 public class UnionFind implements UnionFindInterface{
     private List<Edge> edges  = new LinkedList<>();
-    private HashMap<LineData, LineData> representatives = new HashMap<>();
-    private HashMap<LineData, LinkedList<LineData>> clusters = new HashMap<>();
+    private IdentityHashMap<LineData, LineData> representatives = new IdentityHashMap<>();
+    private IdentityHashMap<LineData, LinkedList<LineData>> clusters = new IdentityHashMap<>();
 
     public UnionFind(List<LineData> segments) {
         for (int i = 0; i < segments.size() - 1; i++) {
@@ -79,11 +79,11 @@ public class UnionFind implements UnionFindInterface{
         return edges;
     }
 
-    public HashMap<LineData, LineData> getRepresentatives() {
+    public IdentityHashMap<LineData, LineData> getRepresentatives() {
         return representatives;
     }
 
-    public HashMap<LineData, LinkedList<LineData>> getClusters() {
+    public IdentityHashMap<LineData, LinkedList<LineData>> getClusters() {
         return clusters;
     }
 }
