@@ -28,7 +28,7 @@ public class Main {
             if (unionFind.union(e)) {
                 clustersFormed--;
 
-                System.out.println(calculatePurity(unionFind.getClusters()));
+                System.out.println(clustersFormed + ", " + calculatePurity(unionFind.getClusters()));
             }
             if (clustersFormed == numClustersToForm) {
                 break;
