@@ -15,12 +15,19 @@ public class Main {
         m.runAlgorithm("src/main/resources/segment-full.arff", "src/main/resources/results.csv", 1);
     }
 
+    /**
+     * Excutes Kruskal's Clustering Algorithm using the UnionFind data structure.
+     * @param dataFile the file containing the data for the nodes we want to cluster
+     * @param resultFile the location were the software should put the result file
+     * @param numClustersToForm the number of clusters to form before exiting.
+     */
     public void runAlgorithm(String dataFile, String resultFile, int numClustersToForm) {
         Parser parser = new ArffParser(dataFile);
         ResultWriter writer;
 
         try {
             writer = new ResultWriter(resultFile, true);
+            writer.writeLine("NumOfClusters, Purity");
         } catch (IOException e) {
             throw new IllegalStateException("Can not write result file!");
         }
