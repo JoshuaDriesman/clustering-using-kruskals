@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Joshua Driesman on 11/30/2015.
- *
+ * <p>
  * Copyright 2015 Joshua Driesman, All rights reserved
  */
 public class UnionFindTest {
@@ -23,7 +23,7 @@ public class UnionFindTest {
         List<Edge> edges = new ArrayList<>(uf.getEdges());
 
         // Make sure list of edges is sorted properly
-        for (int i=0; i<edges.size() - 1; i++) {
+        for (int i = 0; i < edges.size() - 1; i++) {
             assertTrue(edges.get(i).getWeight() <= edges.get(i + 1).getWeight());
         }
     }
@@ -33,7 +33,7 @@ public class UnionFindTest {
         List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
-        HashMap<LineData, LineData> repPairs = uf.getRepresentatives();
+        IdentityHashMap<LineData, LineData> repPairs = uf.getRepresentatives();
 
         for (Map.Entry<LineData, LineData> entry : repPairs.entrySet()) {
             assertEquals(entry.getKey(), (entry.getValue()));
@@ -45,7 +45,7 @@ public class UnionFindTest {
         List<LineData> imageSegments = new ArffParser(TEST_FILE_PATH).parseWhole();
         UnionFind uf = new UnionFind(imageSegments);
 
-        HashMap<LineData, LinkedList<LineData>> clusters = uf.getClusters();
+        IdentityHashMap<LineData, LinkedList<LineData>> clusters = uf.getClusters();
 
         for (Map.Entry<LineData, LinkedList<LineData>> cluster : clusters.entrySet()) {
             LineData rep = cluster.getKey();
