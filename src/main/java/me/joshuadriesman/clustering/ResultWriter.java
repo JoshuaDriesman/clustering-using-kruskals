@@ -17,7 +17,7 @@ public class ResultWriter implements IResultWriter, Closeable {
     public ResultWriter(String fileToWrite, boolean overWrite) throws IOException, IllegalStateException {
         if (Files.exists(Paths.get(fileToWrite)) && overWrite) {
             Files.delete(Paths.get(fileToWrite));
-        } else {
+        } else if (Files.exists(Paths.get(fileToWrite))) {
             throw new IllegalStateException("File already exists and overWrite is set to false.");
         }
 
