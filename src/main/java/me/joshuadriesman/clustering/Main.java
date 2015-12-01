@@ -1,6 +1,6 @@
 package me.joshuadriesman.clustering;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Joshua Driesman on 10/20/2015.
@@ -27,11 +27,46 @@ public class Main {
         for (Edge e : edges) {
             if (unionFind.union(e)) {
                 clustersFormed--;
-                System.out.println("At " + clustersFormed + " clusters!");
+
+                System.out.println(calculatePurity(unionFind.getClusters()));
             }
             if (clustersFormed == numClustersToForm) {
                 break;
             }
         }
+    }
+
+    public double calculatePurity(IdentityHashMap<LineData, LinkedList<LineData>> graph) {
+        double totalNumOfMajority = 0;
+        double totalNumOfSamples = 0;
+
+        for (Map.Entry<LineData, LinkedList<LineData>> e : graph.entrySet()) {
+            totalNumOfMajority += countMajority(e.getValue());
+            totalNumOfSamples += e.getValue().size();
+        }
+
+        return totalNumOfMajority/totalNumOfSamples;
+    }
+
+    private int countMajority(LinkedList<LineData> value) {
+        HashMap<String, Integer> numLabels = new HashMap<>();
+
+        for (LineData node : value) {
+            if (!(node instanceof ImageSegment)) {
+                throw new IllegalStateException("Can not count majority in non-ImageSegment type.");
+            }
+            ImageSegment seg = (ImageSegment) node;
+            String label = seg.getLabel();
+
+            if (Objects.isNull(numLabels.get(label))) {
+                numLabels.put(label, 1);
+            } else {
+                numLabels.put(label, numLabels.get(label) + 1);
+            }
+        }
+
+        Collection<Integer> counts = numLabels.values();
+
+        return Collections.max(counts);
     }
 }
