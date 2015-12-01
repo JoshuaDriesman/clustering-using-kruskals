@@ -51,7 +51,7 @@ public class UnionFind implements UnionFindInterface{
 
                 LinkedList<LineData> nodesForB = clusters.get(repForB);
 
-                clusters.remove(repForB, null);
+                clusters.remove(repForB);
 
                 //Update reps
                 for (LineData node : nodesForB) {
@@ -62,7 +62,7 @@ public class UnionFind implements UnionFindInterface{
 
                 LinkedList<LineData> nodesForA = clusters.get(repForA);
 
-                clusters.put(repForA, null);
+                clusters.remove(repForA);
 
                 //Update reps
                 for (LineData node : nodesForA) {
