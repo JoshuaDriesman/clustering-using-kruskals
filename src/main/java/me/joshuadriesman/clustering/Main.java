@@ -1,5 +1,6 @@
 package me.joshuadriesman.clustering;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -11,11 +12,19 @@ public class Main {
     public static void main(String[] args) {
         Main m = new Main();
 
-        m.runAlgorithm("src/main/resources/segment-full.arff", 1);
+        m.runAlgorithm("src/main/resources/segment-full.arff", "results.csv", 1);
     }
 
-    public void runAlgorithm(String dataFile, int numClustersToForm) {
+    public void runAlgorithm(String dataFile, String resultFile, int numClustersToForm) {
         Parser parser = new ArffParser(dataFile);
+        ResultWriter writer;
+
+        try {
+            writer = new ResultWriter(resultFile, true);
+        } catch (IOException e) {
+            throw new IllegalStateException("Can not write result file!");
+        }
+
         List<LineData> lines = parser.parseWhole();
 
         UnionFind unionFind = new UnionFind(lines);
@@ -28,11 +37,22 @@ public class Main {
             if (unionFind.union(e)) {
                 clustersFormed--;
 
-                System.out.println(clustersFormed + ", " + calculatePurity(unionFind.getClusters()));
+                String lineToWrite = clustersFormed + ", " + calculatePurity(unionFind.getClusters());
+                try {
+                    writer.writeLine(lineToWrite);
+                } catch (IOException e1) {
+                    throw new IllegalStateException("Could not write line to file! Line: " + lineToWrite);
+                }
             }
             if (clustersFormed == numClustersToForm) {
                 break;
             }
+        }
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            throw new IllegalStateException("Could not close writer, or writer is already closed.");
         }
     }
 
