@@ -12,7 +12,15 @@ public class Main {
     public static void main(String[] args) {
         Main m = new Main();
 
-        m.runAlgorithm("src/main/resources/segment-full.arff", "results.csv", 1);
+        String arffFileLocation;
+
+        if (args.length == 2) {
+            arffFileLocation = args[1];
+        } else {
+            arffFileLocation = "src/main/resources/segment-full.arff";
+        }
+
+        m.runAlgorithm(arffFileLocation, "results.csv", 1);
 
         System.out.println("See results.csv for cluster numbers and purity.");
     }
