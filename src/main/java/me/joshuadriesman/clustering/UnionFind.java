@@ -8,7 +8,7 @@ import java.util.*;
  * Copyright 2015 Joshua Driesman, All rights reserved
  */
 public class UnionFind implements UnionFindInterface{
-    private List<Edge> edges  = new ArrayList<>();
+    private List<Edge> edges  = new LinkedList<>();
     private HashMap<LineData, LineData> representatives = new HashMap<>();
     private HashMap<LineData, LinkedList<LineData>> clusters = new HashMap<>();
 
