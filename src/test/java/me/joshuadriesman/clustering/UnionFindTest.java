@@ -63,4 +63,16 @@ public class UnionFindTest {
         LineData node = imageSegments.get(3);
         assertEquals(node, uf.find(node));
     }
+
+    @Test
+    public void testInitialUnion() {
+        List<LineData> imageSegments = new ArffParser("src/test/resources/segment-test.arff").parseWhole();
+        UnionFind uf = new UnionFind(imageSegments);
+
+        Edge e = uf.getEdges().get(0);
+
+        uf.union(e);
+
+        System.out.println(uf.getClusters());
+    }
 }

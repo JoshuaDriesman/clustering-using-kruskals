@@ -22,16 +22,17 @@ public class UnionFind implements UnionFindInterface{
 
                 edges.add(new Edge(nodeA, nodeB));
             }
-
-            //Initialize representatives list
-            representatives.put(nodeA, nodeA);
-
-            LinkedList<LineData> initialCluster = new LinkedList<>();
-            initialCluster.push(nodeA);
-            clusters.put(nodeA, initialCluster);
-
         }
         Collections.sort(edges);
+
+        for (LineData seg : segments) {
+            //Initialize representatives list
+            representatives.put(seg, seg);
+
+            LinkedList<LineData> initialCluster = new LinkedList<>();
+            initialCluster.push(seg);
+            clusters.put(seg, initialCluster);
+        }
     }
 
     @Override
