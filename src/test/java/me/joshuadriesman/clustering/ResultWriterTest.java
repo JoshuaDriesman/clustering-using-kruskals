@@ -37,6 +37,14 @@ public class ResultWriterTest {
         assertEquals("Test", reader.readLine());
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void testWriteAfterClose() throws Exception {
+        ResultWriter writer = new ResultWriter(tempFileLocation.toString(), true);
+
+        writer.close();
+        writer.writeLine("Test");
+    }
+
     @After
     public void breakDown() throws Exception {
         Files.delete(tempFileLocation);
