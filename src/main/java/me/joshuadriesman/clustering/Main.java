@@ -63,6 +63,11 @@ public class Main {
         }
     }
 
+    /**
+     * Calculates the purity of the clusters.
+     * @param graph the graph of clusters to calculated the purity of
+     * @return the purity
+     */
     public double calculatePurity(IdentityHashMap<LineData, LinkedList<LineData>> graph) {
         double totalNumOfMajority = 0;
         double totalNumOfSamples = 0;
