@@ -14,6 +14,7 @@ public interface UnionFindInterface {
     /**
      * Union the two sets connected by that edge.
      * @param e the edge to add to the graph.
+     * @return if the edge resulted in a merge (e.g the ends of the edge were in different clusters)
      */
-    void union(Edge e);
+    boolean union(Edge e);
 }

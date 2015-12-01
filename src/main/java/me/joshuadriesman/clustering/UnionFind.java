@@ -41,7 +41,7 @@ public class UnionFind implements UnionFindInterface{
     }
 
     @Override
-    public void union(Edge e) {
+    public boolean union(Edge e) {
         LineData repForA = find(e.getA());
         LineData repForB = find(e.getB());
 
@@ -69,6 +69,9 @@ public class UnionFind implements UnionFindInterface{
                     representatives.put(node, repForB);
                 }
             }
+            return true;
+        } else {
+            return false;
         }
     }
 
