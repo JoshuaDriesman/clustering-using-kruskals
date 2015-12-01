@@ -73,6 +73,6 @@ public class UnionFindTest {
 
         uf.union(e);
 
-        System.out.println(uf.getClusters());
+        assertEquals(uf.find(e.getA()), uf.find(e.getB()));
     }
 }
