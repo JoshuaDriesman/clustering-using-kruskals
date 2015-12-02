@@ -8,15 +8,12 @@ Requirements:
 - Java 8 or higher
 
 To compile run the following:
-$ chmod u+x compile.sh
-$ ./compile.sh
+$ javac -d ./ src/main/java/me/joshuadriesman/clustering/*
 
 There may be a warning, you can safely ignore this.
-You can also manually run the command inside the compile.sh file.
 
 To run the program do the following:
-$ chmod u+x run.sh
-$ ./run.sh
+$ java me.joshuadriesman.clustering.Main src/main/resources/segment-full.arff
 
 After the software runs, the output will be stored in the results.csv file.
 
