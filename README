@@ -1,0 +1,25 @@
+Copyright 2015 Joshua Driesman, All rights reserved
+
+This software was successfully compiled and ran on the CCIS Linux Lab Machines. You must use the Linux machines, as
+the Java installation on the Windows machines is outdated.
+
+Requirements:
+- Linux
+- Java 8 or higher
+
+To compile run the following:
+$ chmod u+x compile.sh
+$ ./compile.sh
+
+There will be a warning, you can safely ignore this.
+You can also manually run the command inside the compile.sh file.
+
+To run the program do the following:
+$ chmod u+x run.sh
+$ ./run.sh
+
+After the software runs, the output will be stored in the results.csv file.
+
+This will run the program on the full .arff located at src/resources/segment-full.arff. If you want to use a different
+.arff file, you can edit run.sh and replace "src/resources/segment-full.arff" with the path to the .arff file you want
+to use.
