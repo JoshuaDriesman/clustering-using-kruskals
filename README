@@ -11,7 +11,7 @@ To compile run the following:
 $ chmod u+x compile.sh
 $ ./compile.sh
 
-There will be a warning, you can safely ignore this.
+There may be a warning, you can safely ignore this.
 You can also manually run the command inside the compile.sh file.
 
 To run the program do the following:
