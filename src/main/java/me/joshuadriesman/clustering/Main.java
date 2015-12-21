@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Created by Joshua Driesman on 10/20/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  */
 public class Main {
     public static void main(String[] args) {

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by Joshua Driesman on 11/30/2015.
  * <p>
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  */
 public class UnionFindTest {
     final String TEST_FILE_PATH = "src/test/resources/segment-test.arff";

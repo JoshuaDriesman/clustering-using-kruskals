@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by Joshua Driesman on 11/30/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  *
  * Represents an edge between two LineData nodes.
  */

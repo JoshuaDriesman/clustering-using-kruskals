@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by Joshua Driesman on 10/20/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  *
  * Tests for the ImageSegment class.
  */

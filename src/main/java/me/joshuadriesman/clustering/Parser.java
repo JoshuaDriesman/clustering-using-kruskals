@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Joshua Driesman on 10/20/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  *
  * Interface for a basic parser.
  */

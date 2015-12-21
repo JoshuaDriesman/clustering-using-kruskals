@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 /**
  * Created by Joshua Driesman on 12/1/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  *
  * Writer for writing basic result information out to a file.
  */

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Joshua Driesman on 12/1/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  */
 public class ResultWriterTest {
     Path tempFileLocation;

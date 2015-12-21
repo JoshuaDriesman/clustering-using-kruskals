@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Joshua Driesman on 11/29/2015.
  *
- * Copyright 2015 Joshua Driesman, All rights reserved
+ * Copyright 2015 Joshua Driesman
  *
  * UnionFind structure for clustering
  */
