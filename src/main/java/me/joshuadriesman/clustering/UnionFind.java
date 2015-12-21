@@ -6,6 +6,8 @@ import java.util.*;
  * Created by Joshua Driesman on 11/29/2015.
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
+ *
+ * UnionFind structure for clustering
  */
 public class UnionFind implements UnionFindInterface{
     private List<Edge> edges  = new LinkedList<>();
