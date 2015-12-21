@@ -8,6 +8,8 @@ import java.nio.file.Paths;
  * Created by Joshua Driesman on 12/1/2015.
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
+ *
+ * Writer for writing basic result information out to a file.
  */
 public class ResultWriter implements IResultWriter, Closeable {
     private Writer writer;
