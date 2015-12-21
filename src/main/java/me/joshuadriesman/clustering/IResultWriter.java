@@ -6,6 +6,8 @@ import java.io.IOException;
  * Created by Joshua Driesman on 12/1/2015.
  *
  * Copyright 2015 Joshua Driesman, All rights reserved
+ *
+ * Interface for writing lines to result file
  */
 public interface IResultWriter {
     /**
