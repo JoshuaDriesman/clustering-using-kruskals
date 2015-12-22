@@ -13,16 +13,19 @@ public class Main {
         Main m = new Main();
 
         String arffFileLocation;
+        int numOfClusters;
 
         System.out.println(args.length);
 
         if (args.length > 0) {
             arffFileLocation = args[0];
+            numOfClusters = Integer.getInteger(args[1]);
         } else {
             arffFileLocation = "src/main/resources/segment-full.arff";
+            numOfClusters = 1;
         }
 
-        m.runAlgorithm(arffFileLocation, "results.csv", 1);
+        m.runAlgorithm(arffFileLocation, "results.csv", numOfClusters);
 
         System.out.println("See results.csv for cluster numbers and purity.");
     }
