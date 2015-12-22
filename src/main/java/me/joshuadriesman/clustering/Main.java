@@ -14,8 +14,10 @@ public class Main {
 
         String arffFileLocation;
 
-        if (args.length == 2) {
-            arffFileLocation = args[1];
+        System.out.println(args.length);
+
+        if (args.length > 0) {
+            arffFileLocation = args[0];
         } else {
             arffFileLocation = "src/main/resources/segment-full.arff";
         }
@@ -26,7 +28,7 @@ public class Main {
     }
 
     /**
-     * Excutes Kruskal's Clustering Algorithm using the UnionFind data structure.
+     * Executes Kruskal's Clustering Algorithm using the UnionFind data structure.
      * @param dataFile the file containing the data for the nodes we want to cluster
      * @param resultFile the location were the software should put the result file
      * @param numClustersToForm the number of clusters to form before exiting.
