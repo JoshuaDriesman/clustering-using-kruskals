@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering;
+package me.joshuadriesman.clusteringusingkruskals;
 
 import java.io.BufferedReader;
 import java.io.IOException;

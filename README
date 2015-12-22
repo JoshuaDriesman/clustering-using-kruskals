@@ -13,7 +13,7 @@ $ javac -d ./ src/main/java/me/joshuadriesman/clustering/*
 There may be a warning, you can safely ignore this.
 
 To run the program do the following:
-$ java me.joshuadriesman.clustering.Main src/main/resources/segment-full.arff
+$ java me.joshuadriesman.clusteringusingkruskals.Main src/main/resources/segment-full.arff
 
 After the software runs, the output will be stored in the results.csv file.
 

@@ -27,7 +27,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>me.joshuadriesman.clustering.Main</mainClass>
+                            <mainClass>me.joshuadriesman.clusteringusingkruskals.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

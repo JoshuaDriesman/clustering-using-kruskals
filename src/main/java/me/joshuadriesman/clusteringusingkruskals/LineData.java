@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering;
+package me.joshuadriesman.clusteringusingkruskals;
 
 /**
  * Created by Joshua Driesman on 10/20/2015.
@@ -9,7 +9,7 @@ package me.joshuadriesman.clustering;
  */
 public interface LineData {
     /**
-     * Calculates the clustering distance between the current piece of data and the other piece of data.
+     * Calculates the clusteringusingkruskals distance between the current piece of data and the other piece of data.
      * @param o the data for the node to calculate the distance to.
      * @return the distance between the two nodes
      */

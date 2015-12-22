@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering;
+package me.joshuadriesman.clusteringusingkruskals;
 
 import java.util.*;
 
@@ -7,7 +7,7 @@ import java.util.*;
  *
  * Copyright 2015 Joshua Driesman
  *
- * UnionFind structure for clustering
+ * UnionFind structure for clusteringusingkruskals
  */
 public class UnionFind implements UnionFindInterface{
     private List<Edge> edges  = new LinkedList<>();

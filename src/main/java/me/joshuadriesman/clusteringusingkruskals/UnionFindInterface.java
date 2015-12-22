@@ -1,4 +1,4 @@
-package me.joshuadriesman.clustering;
+package me.joshuadriesman.clusteringusingkruskals;
 
 /**
  * Created by Joshua Driesman on 11/29/2015.
