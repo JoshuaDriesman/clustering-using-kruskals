@@ -1,22 +1,10 @@
 Copyright 2015 Joshua Driesman
 
-This software was successfully compiled and ran on the CCIS Linux Lab Machines. You must use the Linux machines, as
-the Java installation on the Windows machines is outdated.
+## About
+This software is a demonstration of clustering image data using Kruskal's algorithm running on an implementation of
+UnionFind. It was originally developed as a project for CS4800 Algorithms and Data Structures taught by Professor
+Jacek Ossowski at Northeastern University.
 
-Requirements:
-- Linux
-- Java 8 or higher
+## Installation
 
-To compile run the following:
-$ javac -d ./ src/main/java/me/joshuadriesman/clustering/*
-
-There may be a warning, you can safely ignore this.
-
-To run the program do the following:
-$ java me.joshuadriesman.clusteringusingkruskals.Main src/main/resources/segment-full.arff
-
-After the software runs, the output will be stored in the results.csv file.
-
-This will run the program on the full .arff located at src/resources/segment-full.arff. If you want to use a different
-.arff file, you can edit run.sh and replace "src/resources/segment-full.arff" with the path to the .arff file you want
-to use.
+### Requirements
