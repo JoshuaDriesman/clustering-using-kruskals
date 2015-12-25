@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.joshuadriesman.clustering.ImageDataClustering</groupId>
-    <artifactId>ImageDataClustering</artifactId>
+    <artifactId>ClusteringUsingKruskals</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
