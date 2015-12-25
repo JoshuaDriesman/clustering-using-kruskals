@@ -7,4 +7,8 @@ Jacek Ossowski at Northeastern University.
 
 ## Installation
 
-### Requirements
+#### Requirements
+
+- Java 1.8 or better
+- Maven
+
