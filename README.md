@@ -24,7 +24,7 @@ To build executable JAR:
 
 1. ```$ mvn assembly:assembly```
 2. The JAR will be found under:
-```target/ClusteringUsingKruskals-1.0-SNAPSHOT-jar-with-dep``````endencies.jar```
+```target/ClusteringUsingKruskals-1.0-SNAPSHOT-jar-with-dependencies.jar```
 
 ## Run
 
