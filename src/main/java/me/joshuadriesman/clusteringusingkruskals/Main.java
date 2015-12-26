@@ -37,9 +37,11 @@ public class Main {
                 break;
         }
 
+        System.out.println("Running...");
+
         m.runAlgorithm(arffFileLocation, clusterResultsOutput, purityResultsOutput, numOfClusters);
 
-        System.out.println("See results.csv for cluster numbers and purity.");
+        System.out.println("Done!");
     }
 
     /**
@@ -97,7 +99,7 @@ public class Main {
             try {
                 clusterWriter.writeLine(cluster.getValue().toString());
             } catch (IOException e) {
-                System.out.println("Could nt write line to file, which may result in lost data.");
+                System.out.println("Could not write line to file, which may result in lost data.");
             }
         }
 
