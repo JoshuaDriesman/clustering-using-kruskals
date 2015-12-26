@@ -36,6 +36,15 @@ public class ResultWriter implements IResultWriter, Closeable {
     }
 
     @Override
+    public void write(String text) throws IOException {
+        if (open) {
+            writer.write(text);
+        } else {
+            throw new IllegalStateException("ResultWriter is not open");
+        }
+    }
+
+    @Override
     public void close() throws IOException {
         writer.close();
         open = false;
