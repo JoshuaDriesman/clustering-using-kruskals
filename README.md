@@ -23,8 +23,7 @@ Note: The JAR is not executable. To create an executable JAR, see the directions
 To build executable JAR:
 
 1. ```$ mvn assembly:assembly```
-2. The JAR will be found under:
-```target/ClusteringUsingKruskals-1.0-SNAPSHOT-jar-with-dependencies.jar```
+2. The JAR will be found under: ```target/ClusteringUsingKruskals-1.0-SNAPSHOT-jar-with-dependencies.jar```
 
 ## Run
 
