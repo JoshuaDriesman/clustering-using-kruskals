@@ -16,6 +16,7 @@ public class Main {
         int numOfClusters = 1;
         String clusterResultsOutput = "./clusters.txt";
         String purityResultsOutput = "./purity.csv";
+        Boolean verboseClusters = false;
 
         switch (args.length)
         {
@@ -35,11 +36,18 @@ public class Main {
                 clusterResultsOutput = args[2];
                 purityResultsOutput = args[3];
                 break;
+            case 5: arffFileLocation = args[0];
+                numOfClusters = Integer.getInteger(args[1]);
+                clusterResultsOutput = args[2];
+                purityResultsOutput = args[3];
+                if (args[4].equals('y')) {
+                    verboseClusters = true;
+                }
         }
 
         System.out.println("Running...");
 
-        m.runAlgorithm(arffFileLocation, clusterResultsOutput, purityResultsOutput, numOfClusters);
+        m.runAlgorithm(arffFileLocation, clusterResultsOutput, verboseClusters,     purityResultsOutput, numOfClusters);
 
         System.out.println("Done!");
     }
@@ -50,7 +58,7 @@ public class Main {
      * @param purityResultFile the location were the software should put the result file
      * @param numClustersToForm the number of clusters to form before exiting.
      */
-    public void runAlgorithm(String dataFile, String clustersResultFile,
+    public void runAlgorithm(String dataFile, String clustersResultFile, boolean verboseClusters,
                              String purityResultFile, int numClustersToForm) {
         Parser parser = new ArffParser(dataFile);
         ResultWriter purityWriter;
@@ -97,7 +105,16 @@ public class Main {
         IdentityHashMap<LineData, LinkedList<LineData>> clusters = unionFind.getClusters();
         for (Map.Entry<LineData, LinkedList<LineData>> cluster : clusters.entrySet()) {
             try {
-                clusterWriter.writeLine(cluster.getValue().toString());
+                if (verboseClusters) {
+                    clusterWriter.writeLine(cluster.getValue().toString());
+                } else {
+                    clusterWriter.writeLine("[");
+                    for (LineData l : cluster.getValue()) {
+                        ImageSegment seg = (ImageSegment) l;
+                        clusterWriter.write(seg.getLabel() + ",");
+                    }
+                    clusterWriter.writeLine("]");
+                }
             } catch (IOException e) {
                 System.out.println("Could not write line to file, which may result in lost data.");
             }
