@@ -12,20 +12,32 @@ public class Main {
     public static void main(String[] args) {
         Main m = new Main();
 
-        String arffFileLocation;
-        int numOfClusters;
+        String arffFileLocation = "";
+        int numOfClusters = 1;
+        String clusterResultsOutput = "./clusters.txt";
+        String purityResultsOutput = "./purity.csv";
 
-        System.out.println(args.length);
-
-        if (args.length > 0) {
-            arffFileLocation = args[0];
-            numOfClusters = Integer.getInteger(args[1]);
-        } else {
-            arffFileLocation = "src/main/resources/segment-full.arff";
-            numOfClusters = 1;
+        switch (args.length)
+        {
+            case 0: System.out.println("An input file is required.");
+                return;
+            case 1: arffFileLocation = args[0];
+                break;
+            case 2: arffFileLocation = args[0];
+                numOfClusters = Integer.getInteger(args[1]);
+                break;
+            case 3: arffFileLocation = args[0];
+                numOfClusters = Integer.getInteger(args[1]);
+                clusterResultsOutput = args[2];
+                break;
+            case 4: arffFileLocation = args[0];
+                numOfClusters = Integer.getInteger(args[1]);
+                clusterResultsOutput = args[2];
+                purityResultsOutput = args[3];
+                break;
         }
 
-        m.runAlgorithm(arffFileLocation, "results.csv", numOfClusters);
+        m.runAlgorithm(arffFileLocation, clusterResultsOutput, purityResultsOutput, numOfClusters);
 
         System.out.println("See results.csv for cluster numbers and purity.");
     }
@@ -33,18 +45,26 @@ public class Main {
     /**
      * Executes Kruskal's Clustering Algorithm using the UnionFind data structure.
      * @param dataFile the file containing the data for the nodes we want to cluster
-     * @param resultFile the location were the software should put the result file
+     * @param purityResultFile the location were the software should put the result file
      * @param numClustersToForm the number of clusters to form before exiting.
      */
-    public void runAlgorithm(String dataFile, String resultFile, int numClustersToForm) {
+    public void runAlgorithm(String dataFile, String clustersResultFile,
+                             String purityResultFile, int numClustersToForm) {
         Parser parser = new ArffParser(dataFile);
-        ResultWriter writer;
+        ResultWriter purityWriter;
+        ResultWriter clusterWriter;
 
         try {
-            writer = new ResultWriter(resultFile, true);
-            writer.writeLine("NumOfClusters, Purity");
+            purityWriter = new ResultWriter(purityResultFile, true);
+            purityWriter.writeLine("NumOfClusters, Purity");
         } catch (IOException e) {
-            throw new IllegalStateException("Can not write result file!");
+            throw new IllegalStateException("Can not write purity result file!");
+        }
+
+        try {
+            clusterWriter = new ResultWriter(clustersResultFile, true);
+        } catch (IOException e) {
+            throw new IllegalStateException("Can not write cluster result file!");
         }
 
         List<LineData> lines = parser.parseWhole();
@@ -61,9 +81,10 @@ public class Main {
 
                 String lineToWrite = clustersFormed + ", " + calculatePurity(unionFind.getClusters());
                 try {
-                    writer.writeLine(lineToWrite);
+                    purityWriter.writeLine(lineToWrite);
                 } catch (IOException e1) {
-                    throw new IllegalStateException("Could not write line to file! Line: " + lineToWrite);
+                    System.out.println("Could not write line to file, which may result in lost data." +
+                            " Line: " + lineToWrite);
                 }
             }
             if (clustersFormed == numClustersToForm) {
@@ -71,10 +92,20 @@ public class Main {
             }
         }
 
+        IdentityHashMap<LineData, LinkedList<LineData>> clusters = unionFind.getClusters();
+        for (Map.Entry<LineData, LinkedList<LineData>> cluster : clusters.entrySet()) {
+            try {
+                clusterWriter.writeLine(cluster.getValue().toString());
+            } catch (IOException e) {
+                System.out.println("Could nt write line to file, which may result in lost data.");
+            }
+        }
+
         try {
-            writer.close();
+            purityWriter.close();
+            clusterWriter.close();
         } catch (IOException e) {
-            throw new IllegalStateException("Could not close writer, or writer is already closed.");
+            System.out.println("Could not close writer, or writer is already closed.");
         }
     }
 
