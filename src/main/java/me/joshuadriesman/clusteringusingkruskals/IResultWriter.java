@@ -17,4 +17,11 @@ public interface IResultWriter {
      * @throws java.io.IOException if the line could not be written
      */
     void writeLine(String line) throws IOException;
+
+    /**
+     * Writes just text to file without new line.
+     * @param text text to write.
+     * @throws IOException if the text could not be written
+     */
+    void write(String text) throws IOException;
 }
