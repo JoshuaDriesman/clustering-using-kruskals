@@ -25,19 +25,19 @@ public class Main {
             case 1: arffFileLocation = args[0];
                 break;
             case 2: arffFileLocation = args[0];
-                numOfClusters = Integer.getInteger(args[1]);
+                numOfClusters = new Integer(args[1]);
                 break;
             case 3: arffFileLocation = args[0];
-                numOfClusters = Integer.getInteger(args[1]);
+                numOfClusters = new Integer(args[1]);
                 clusterResultsOutput = args[2];
                 break;
             case 4: arffFileLocation = args[0];
-                numOfClusters = Integer.getInteger(args[1]);
+                numOfClusters = new Integer(args[1]);
                 clusterResultsOutput = args[2];
                 purityResultsOutput = args[3];
                 break;
             case 5: arffFileLocation = args[0];
-                numOfClusters = Integer.getInteger(args[1]);
+                numOfClusters = new Integer(args[1]);
                 clusterResultsOutput = args[2];
                 purityResultsOutput = args[3];
                 if (args[4].equals('y')) {
